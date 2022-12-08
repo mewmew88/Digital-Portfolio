@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  text-align: right;
+  padding: 3% 5%;
+}
+
+h3{
+  width: 700px;
+  padding: 0%;
+  margin: auto;
+  text-align: center;
+  padding: 15% 5%;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+/*  navbar created as flex element */
+#navbar {
+  display: flex;
+  direction: row;
+  margin: 10px;
+  background-image: url(./images/CSS1.jpg);
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  width: 100%;
+}
+/* nav menu styles*/
+#nav-menu {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 auto;
+  justify-content: space-around;
+  width: 50%;
+  font-size: 20px;
+  min-height: 300px;
+}
+
+#nav-menu a {
+  text-decoration: none;
+  color:blanchedalmond;
+  margin-top: 5%;
+}
+/*hero banner*/
+
+.quote {
+  float: center;
+  margin-top: 15%;
+  border-radius: 5px;
+  padding: 1em;
+ }
+
+/*image card styles - use these for positioning */
+
+#avatar {
+  position: absolute;
+  width: 100%;
+  top: 10%;
+  right: 25%;
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  max-width: 50%;
+  background-color:aliceblue;
+  margin-left: 100px;
+  box-shadow: black 0px 20px 30px -10px;
+  border-radius: 25px;
+}
+
+#photo {
+  background-image: url(./images/avatar.jpg);
+  width: 80%;
+  height: 400px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-size: cover;
+
+}
+
+/*info section card*/
+
+#info-section {
+  display: flex;
+  width: 100%;
+}
+
+#spacer {
+  min-height: -10em;
+}
+
+#spacer1 {
+  min-height:auto;
+}
+
+#spacer2 {
+  min-height:auto;
+}
+
+
+.page-wrapper {
+  margin: 0 5%;
+}
+
+/* grids start here */
+
+.two-grid {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "about-me about-info";
+}
+
+.page-section {
+  display: grid;
+  grid-template-columns: 20% 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "work feature-project feature-project"
+    "work project2 project3"
+    "work project4 project5"
+    "work project4 project6";
+}
+
+
+.grid-area {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px;
+  cursor: pointer;
+  display: grid;
+  align-content: end;
+  border: 3px solid brown;
+
+}
+.grid-area:hover {
+  opacity: 0.3;
+}
+
+/* element styling for grid items*/
+
+#about-heading {
+  grid-area: about-me;
+  border-right: 2px solid brown;
+}
+
+#about-info {
+  grid-area: about-info;
+  margin: 25px 5px;
+  padding-bottom: 6vh;
+  text-align: center;
+}
+
+
+#projects-heading {
+  grid-area: work;
+  border-right: 2px solid brown;
+}
+
+#feature-project {
+  grid-area: feature-project;
+  background-image: url(./images/pre-study-guide.jpg);
+  height: 30vh;
+  background-size: cover;
+}
+
+#project2 {
+  grid-area: project2;
+  background-image: url(./images/website.jpg);
+}
+
+#project3 {
+  grid-area: project3;
+  background-image: url(./images/furniture.jpg);
+}
+
+#project4 {
+  grid-area: project4;
+  background-image: url(./images/coffee.jpg);
+
+}
+
+#project5 {
+  grid-area: project5;
+  background-image: url(./images/02-portfolio-2.jpg);
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact-me {
+  border-right: 2px solid brown;
+  flex: 0 0 20%;
+}
+
+#contact-info {
+  flex: 15% 15% 15% ;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+/* media queries */
+
+@media screen and (max-width: 950px) {
+  #avatar {
+    right: 15%;
+    max-width: 65%;
+  }
+  
+  .contact-grid {
+    flex-direction: column;
+  }
+
+  #contact-heading {
+    border-right: none;
+    border-bottom: 2px solid brown;
+    text-align: center;
+    flex: 0 0 10%;
+    margin: auto;
+
+  }
+  #project-heading {
+    border-right: none;
+    border-bottom: 2px solid brown;
+    text-align: center;
+    flex: 0 0 10%;
+    margin: auto;
+  }
+
+  .page-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "work"
+      "feature-project"
+      "project2"
+      "project3"
+      "project4"
+      "project5"
+      "project6";
+  }
+
+  #photo {
+    display: none;
+  }
+}
